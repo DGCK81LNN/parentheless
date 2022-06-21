@@ -8,9 +8,6 @@ import {
   ValueNode,
 } from "./parser.mjs"
 
-console.log("and")
-try{
-
 const keywords = {
   _: null,
   plus: new BinaryOperator("plus", 1),
@@ -84,7 +81,7 @@ function update(showError = true) {
     $tree.append(renderTree(tree))
   } catch (err) {
     if (showError) {
-      console.warn(err)
+      console.log(err)
       $tree.innerText = err
     }
   }
@@ -116,6 +113,3 @@ function renderTree(node) {
   }
   return $el
 }
-
-console.log("ok")
-}catch(err){console.error(err)}
